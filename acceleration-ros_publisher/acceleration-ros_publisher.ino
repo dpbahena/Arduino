@@ -18,16 +18,20 @@
 Adafruit_MPU6050 mpu;
 
 rcl_publisher_t publisher;        // for linear and angular velocity
-rcl_publisher_t temp_publisher;  //for temperature
 sensor_msgs__msg__Imu msg;
-sensor_msgs__msg__Temperature msg1;
 rclc_executor_t executor;
+rcl_timer_t timer;
+
+rcl_publisher_t temp_publisher;  //for temperature
+sensor_msgs__msg__Temperature msg1;
 rclc_executor_t temp_executor;
+rcl_timer_t temp_timer;
+
 rclc_support_t support;
 rcl_allocator_t allocator;
 rcl_node_t node;
-rcl_timer_t timer;
-rcl_timer_t temp_timer;
+
+
 
 #define LED_PIN 13
 
